@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-@Mod.EventBusSubscriber(modid = ModConstants.MODID)
+@Mod.EventBusSubscriber(modid = Tags.MOD_ID)
 public class ModModels {
 
 	@SubscribeEvent

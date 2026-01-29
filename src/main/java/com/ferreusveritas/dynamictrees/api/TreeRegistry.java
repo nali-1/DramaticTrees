@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.api;
 
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.api.cells.ICellKit;
 import com.ferreusveritas.dynamictrees.api.treedata.IDropCreator;
 import com.ferreusveritas.dynamictrees.api.treedata.IDropCreatorStorage;
@@ -51,7 +52,7 @@ public class TreeRegistry {
 
 		ResourceLocation resloc = new ResourceLocation(name);
 		if ("minecraft".equals(resloc.getResourceDomain())) {//Minecraft(Mojang) isn't likely to have registered any Dynamic Tree species.
-			resloc = new ResourceLocation(ModConstants.MODID, resloc.getResourcePath());//Search DynamicTrees Domain instead
+			resloc = new ResourceLocation(Tags.MOD_ID, resloc.getResourcePath());//Search DynamicTrees Domain instead
 		}
 
 		//Search specific domain first
@@ -121,7 +122,7 @@ public class TreeRegistry {
 	// DROP HANDLING
 	//////////////////////////////
 
-	public static final ResourceLocation globalName = new ResourceLocation(ModConstants.MODID, "global");
+	public static final ResourceLocation globalName = new ResourceLocation(Tags.MOD_ID, "global");
 
 	/**
 	 * This exists so that mods not interested in making Dynamic Trees can still add drops to all trees.
@@ -166,7 +167,7 @@ public class TreeRegistry {
 	public static ICellKit findCellKit(String name) {
 		ResourceLocation kitLocation = new ResourceLocation(name);
 		if ("minecraft".equals(kitLocation.getResourceDomain())) {//Minecraft doesn't register leaves properties
-			kitLocation = new ResourceLocation(ModConstants.MODID, kitLocation.getResourcePath());//Default to "dynamictrees" instead
+			kitLocation = new ResourceLocation(Tags.MOD_ID, kitLocation.getResourcePath());//Default to "dynamictrees" instead
 		}
 		return findCellKit(kitLocation);
 	}
@@ -190,7 +191,7 @@ public class TreeRegistry {
 	public static IGrowthLogicKit findGrowthLogicKit(String name) {
 		ResourceLocation kitLocation = new ResourceLocation(name);
 		if ("minecraft".equals(kitLocation.getResourceDomain())) {//Minecraft doesn't register leaves properties
-			kitLocation = new ResourceLocation(ModConstants.MODID, kitLocation.getResourcePath());//Default to "dynamictrees" instead
+			kitLocation = new ResourceLocation(Tags.MOD_ID, kitLocation.getResourcePath());//Default to "dynamictrees" instead
 		}
 		return findGrowthLogicKit(kitLocation);
 	}

@@ -19,9 +19,7 @@ import net.minecraftforge.common.property.IExtendedBlockState;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
@@ -102,12 +100,37 @@ public class ModelEntityFallingTree {
 					species.getLeavesProperties().foliageColorMultiplier(leafState, world, cutPos), leafState));
 			}
 		} else {
-			for (int index = 0; index < destructionData.getNumLeaves(); index++) {
+			for (int index = 0; index < destructionData.getNumLeaves(); index++)
+			{
 				BlockPos relPos = destructionData.getLeavesRelPos(index);
-				IBlockState state = destructionData.getLeavesBlockState(index);
-				IBakedModel leavesModel = dispatcher.getModelForState(state);
-				treeQuads.addAll(toTreeQuadData(QuadManipulator.getQuads(leavesModel, state, new Vec3d(relPos)),
-					destructionData.getLeavesProperties(index).foliageColorMultiplier(state, world, cutPos.add(relPos)), state));
+				EnumFacing[] Penumfacing = EnumFacing.values();
+				BlockPos[] Pblockpos = new BlockPos[Penumfacing.length];
+				Set<EnumFacing> Venumfacing_new = EnumSet.allOf(EnumFacing.class);
+				for (int I1 = 0; I1 < Penumfacing.length; I1++)
+				{
+					Pblockpos[I1] = relPos.offset(Penumfacing[I1]);
+				}
+				for (int I1 = 0; I1 < destructionData.getNumLeaves(); I1++)
+				{
+					if (index == I1)
+						continue;
+
+					BlockPos Vblockpos = destructionData.getLeavesRelPos(I1);
+					for (int I2 = 0; I2 < Penumfacing.length; I2++)
+					{
+						if (Vblockpos.equals(Pblockpos[I2]))
+						{
+							Venumfacing_new.remove(Penumfacing[I2]);
+							break;
+						}
+					}
+				}
+				if (!Venumfacing_new.isEmpty())
+				{
+					IBlockState state = destructionData.getLeavesBlockState(index);
+					IBakedModel leavesModel = dispatcher.getModelForState(state);
+					treeQuads.addAll(toTreeQuadData(QuadManipulator.getQuads(leavesModel, state, new Vec3d(relPos), Venumfacing_new.toArray(new EnumFacing[0])), destructionData.getLeavesProperties(index).foliageColorMultiplier(state, world, cutPos.add(relPos)), state));
+				}
 			}
 		}
 

@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.util;
 
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.blocks.LeavesPaging;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -17,7 +18,7 @@ public class JsonHelper {
 		String filename = "assets/" + jsonLocation.getResourceDomain() + "/" + jsonLocation.getResourcePath();
 		InputStream in = new LeavesPaging().getClass().getClassLoader().getResourceAsStream(filename);
 		if (in == null) {
-			Logger.getLogger(ModConstants.MODID).log(Level.SEVERE, "Could not open resource " + filename);
+			Logger.getLogger(Tags.MOD_ID).log(Level.SEVERE, "Could not open resource " + filename);
 			return null;
 		}
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));

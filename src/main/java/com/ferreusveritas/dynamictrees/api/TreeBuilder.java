@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.api;
 
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.api.cells.ICellKit;
 import com.ferreusveritas.dynamictrees.api.treedata.ILeavesProperties;
 import com.ferreusveritas.dynamictrees.blocks.BlockDynamicLeaves;
@@ -276,7 +277,7 @@ public class TreeBuilder {
 						}
 					};
 
-					LeavesPaging.getLeavesBlockForSequence(ModConstants.MODID, seqNum, dynamicLeavesProperties);
+					LeavesPaging.getLeavesBlockForSequence(Tags.MOD_ID, seqNum, dynamicLeavesProperties);
 				}
 
 				this.setPrimitiveLog(primitiveLogBlockState);

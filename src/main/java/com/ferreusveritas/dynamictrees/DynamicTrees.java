@@ -13,10 +13,10 @@ import org.apache.logging.log4j.Logger;
 /**
  * 2016-2018 Ferreusveritas
  */
-@Mod(modid = ModConstants.MODID, name = ModConstants.NAME, version = ModConstants.VERSION, dependencies = ModConstants.DEPENDENCIES, updateJSON = ModConstants.UPDATE_CHECKER)
+@Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION, dependencies = ModConstants.DEPENDENCIES, updateJSON = ModConstants.UPDATE_CHECKER)
 public class DynamicTrees {
 
-	@Mod.Instance(ModConstants.MODID)
+	@Mod.Instance(Tags.MOD_ID)
 	public static DynamicTrees instance;
 
 	@SidedProxy(clientSide = ModConstants.CLIENT_PROXY, serverSide = ModConstants.COMMON_PROXY)

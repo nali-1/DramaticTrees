@@ -14,7 +14,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.ArrayList;
 
-@Mod.EventBusSubscriber(modid = ModConstants.MODID)
+@Mod.EventBusSubscriber(modid = Tags.MOD_ID)
 public class ModItems {
 
 	public static DendroPotion dendroPotion;

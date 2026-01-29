@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.systems.dropcreators;
 
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.trees.Species;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -23,7 +24,7 @@ public class DropCreatorApple extends DropCreator {
 	public static final DropCreatorApple instance = new DropCreatorApple();
 
 	public DropCreatorApple() {
-		super(new ResourceLocation(ModConstants.MODID, "apple"));
+		super(new ResourceLocation(Tags.MOD_ID, "apple"));
 	}
 
 	@Override

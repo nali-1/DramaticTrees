@@ -14,9 +14,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import scala.actors.threadpool.Arrays;
 
 import java.awt.*;
+import java.util.Arrays;
 import java.util.List;
 
 public class CommandCreateStaff extends SubCommand {
@@ -46,7 +46,7 @@ public class CommandCreateStaff extends SubCommand {
 			case 6:
 				return getJoCode(sender.getEntityWorld(), targetPos, TreeHelper.getExactSpecies(sender.getEntityWorld(), targetPos));
 			case 7:
-				return Arrays.asList(new Object[]{"#00FFFF"});
+				return Arrays.asList(new String[]{"#00FFFF"});
 			case 8:
 				return CommandBase.getListOfStringsMatchingLastWord(args, "true", "false");
 			case 9:

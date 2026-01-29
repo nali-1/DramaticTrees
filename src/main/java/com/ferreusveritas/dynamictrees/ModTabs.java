@@ -9,7 +9,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModTabs {
 
-	public static final CreativeTabs dynamicTreesTab = new CreativeTabs(ModConstants.MODID) {
+	public static final CreativeTabs dynamicTreesTab = new CreativeTabs(Tags.MOD_ID) {
 		@SideOnly(Side.CLIENT)
 		@Override
 		public ItemStack getTabIconItem() {

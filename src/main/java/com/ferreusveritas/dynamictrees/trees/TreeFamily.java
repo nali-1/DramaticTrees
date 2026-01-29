@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.trees;
 
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.api.TreeHelper;
 import com.ferreusveritas.dynamictrees.api.treedata.ILeavesProperties;
 import com.ferreusveritas.dynamictrees.blocks.*;
@@ -131,7 +132,7 @@ public class TreeFamily {
 	public int woodColor;//For roots
 
 	public TreeFamily() {
-		this.name = new ResourceLocation(ModConstants.MODID, "null");
+		this.name = new ResourceLocation(Tags.MOD_ID, "null");
 	}
 
 	/**

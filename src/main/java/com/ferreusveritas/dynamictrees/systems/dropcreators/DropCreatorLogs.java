@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.systems.dropcreators;
 
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.trees.Species;
 import com.ferreusveritas.dynamictrees.trees.Species.LogsAndSticks;
 import net.minecraft.item.ItemStack;
@@ -14,7 +15,7 @@ import java.util.Random;
 public class DropCreatorLogs extends DropCreator {
 
 	public DropCreatorLogs() {
-		super(new ResourceLocation(ModConstants.MODID, "logs"));
+		super(new ResourceLocation(Tags.MOD_ID, "logs"));
 	}
 
 	@Override

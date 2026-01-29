@@ -1,0 +1,14 @@
+{
+	"package": "com.ferreusveritas.dynamictrees.mixin",
+	"required": true,
+	"refmap": "mixins.ui.refmap.json",
+	"target": "@env(DEFAULT)",
+	"minVersion": "0.8.5",
+	"compatibilityLevel": "JAVA_8",
+	"mixins": [
+		"MixinBlockLeaves"
+	],
+	"server": [],
+	"client": [
+	]
+}

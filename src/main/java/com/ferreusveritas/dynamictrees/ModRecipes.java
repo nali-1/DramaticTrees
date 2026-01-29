@@ -19,7 +19,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
-@Mod.EventBusSubscriber(modid = ModConstants.MODID)
+@Mod.EventBusSubscriber(modid = Tags.MOD_ID)
 public class ModRecipes {
 	
 	@SubscribeEvent(priority = EventPriority.LOWEST)
@@ -29,12 +29,12 @@ public class ModRecipes {
 		ModItems.dendroPotion.registerRecipes(registry);
 		
 		//Create a dirt bucket from dirt and a bucket
-		GameRegistry.addShapelessRecipe(new ResourceLocation(ModConstants.MODID, "dirtbucket"), null, new ItemStack(ModItems.dirtBucket),
+		GameRegistry.addShapelessRecipe(new ResourceLocation(Tags.MOD_ID, "dirtbucket"), null, new ItemStack(ModItems.dirtBucket),
 			Ingredient.fromItem(Items.BUCKET), Ingredient.fromItem(Item.getItemFromBlock(Blocks.DIRT)));
 		
 		//Create a seed <-> sapling exchange for the 6 vanilla tree types
 		for (BlockPlanks.EnumType woodType : BlockPlanks.EnumType.values()) {
-			Species species = TreeRegistry.findSpecies(new ResourceLocation(ModConstants.MODID, woodType.getName().replace("_", "")));
+			Species species = TreeRegistry.findSpecies(new ResourceLocation(Tags.MOD_ID, woodType.getName().replace("_", "")));
 			ItemStack saplingStack = new ItemStack(Blocks.SAPLING, 1, woodType.getMetadata());
 			ItemStack seedStack = species.getSeedStack(1);
 			createDirtBucketExchangeRecipes(saplingStack, seedStack, true);
@@ -42,7 +42,7 @@ public class ModRecipes {
 		
 		//Create an apple seed from an apple and dirt bucket
 		if (ModConfigs.enableAppleTrees) {
-			createDirtBucketExchangeRecipes(new ItemStack(Items.APPLE), TreeRegistry.findSpecies(new ResourceLocation(ModConstants.MODID, "apple")).getSeedStack(1), false);
+			createDirtBucketExchangeRecipes(new ItemStack(Items.APPLE), TreeRegistry.findSpecies(new ResourceLocation(Tags.MOD_ID, "apple")).getSeedStack(1), false);
 		}
 		
 	}

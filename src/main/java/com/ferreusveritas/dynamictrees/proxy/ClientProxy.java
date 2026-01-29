@@ -1,9 +1,6 @@
 package com.ferreusveritas.dynamictrees.proxy;
 
-import com.ferreusveritas.dynamictrees.ModBlocks;
-import com.ferreusveritas.dynamictrees.ModConstants;
-import com.ferreusveritas.dynamictrees.ModItems;
-import com.ferreusveritas.dynamictrees.ModTrees;
+import com.ferreusveritas.dynamictrees.*;
 import com.ferreusveritas.dynamictrees.api.TreeHelper;
 import com.ferreusveritas.dynamictrees.api.client.ModelHelper;
 import com.ferreusveritas.dynamictrees.api.treedata.ILeavesProperties;
@@ -138,7 +135,7 @@ public class ClientProxy extends CommonProxy {
 		}
 		
 		//Sapling
-		ModelHelper.setGenericStateMapper(ModBlocks.blockDynamicSapling, new ModelResourceLocation(new ResourceLocation(ModConstants.MODID, "sapling"), ""));
+		ModelHelper.setGenericStateMapper(ModBlocks.blockDynamicSapling, new ModelResourceLocation(new ResourceLocation(Tags.MOD_ID, "sapling"), ""));
 		
 		//Setup the state mapper for the trunk shell
 		ModelLoader.setCustomStateMapper(ModBlocks.blockTrunkShell, new StateMap.Builder().ignore(BlockTrunkShell.COREDIR).build());
@@ -149,7 +146,7 @@ public class ClientProxy extends CommonProxy {
 		ModelHelper.regModel(ModTrees.dynamicCactus.getCommonSpecies().getSeed());
 		
 		//Special seed for apple
-		ModelHelper.regModel(Species.REGISTRY.getValue(new ResourceLocation(ModConstants.MODID, "apple")).getSeed());
+		ModelHelper.regModel(Species.REGISTRY.getValue(new ResourceLocation(Tags.MOD_ID, "apple")).getSeed());
 		
 		//Set state mappers for all blocks created with the LeavesPaging object
 		LeavesPaging.setStateMappers();
@@ -220,7 +217,7 @@ public class ClientProxy extends CommonProxy {
 		//TREE PARTS
 		
 		//Register GrowingLeavesBlocks Colorizers
-		for (BlockDynamicLeaves leaves : LeavesPaging.getLeavesMapForModId(ModConstants.MODID).values()) {
+		for (BlockDynamicLeaves leaves : LeavesPaging.getLeavesMapForModId(Tags.MOD_ID).values()) {
 			ModelHelper.regColorHandler(leaves, (state, worldIn, pos, tintIndex) ->
 			TreeHelper.isLeaves(state.getBlock()) ? ((BlockDynamicLeaves) state.getBlock()).getProperties(state).foliageColorMultiplier(state, worldIn, pos) : magenta
 					);

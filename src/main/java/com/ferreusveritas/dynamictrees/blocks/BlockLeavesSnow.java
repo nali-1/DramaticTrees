@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.blocks;
 
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.seasons.SeasonHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSnow;
@@ -25,7 +26,7 @@ public class BlockLeavesSnow extends BlockSnow {
 
 	public BlockLeavesSnow() {
 		setUnlocalizedName(name);
-		setRegistryName(new ResourceLocation(ModConstants.MODID, name));
+		setRegistryName(new ResourceLocation(Tags.MOD_ID, name));
 		setHardness(0.1f);
 		setSoundType(SoundType.SNOW);
 		setLightOpacity(0);

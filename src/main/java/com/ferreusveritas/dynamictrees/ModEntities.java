@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
-@Mod.EventBusSubscriber(modid = ModConstants.MODID)
+@Mod.EventBusSubscriber(modid = Tags.MOD_ID)
 public class ModEntities {
 
 	public final static String FALLING_TREE = "falling_tree";
@@ -16,7 +16,7 @@ public class ModEntities {
 	@SubscribeEvent
 	public static void register(RegistryEvent.Register<EntityEntry> event) {
 		int id = 0;
-		EntityRegistry.registerModEntity(new ResourceLocation(ModConstants.MODID, FALLING_TREE), EntityFallingTree.class, FALLING_TREE, id++, ModConstants.MODID, 512, Integer.MAX_VALUE, true);
+		EntityRegistry.registerModEntity(new ResourceLocation(Tags.MOD_ID, FALLING_TREE), EntityFallingTree.class, FALLING_TREE, id++, Tags.MOD_ID, 512, Integer.MAX_VALUE, true);
 	}
 
 }

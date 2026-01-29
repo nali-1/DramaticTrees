@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.trees;
 
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.api.IGenFeature;
 import com.ferreusveritas.dynamictrees.systems.featuregen.FeatureGenHugeMushroom;
 import net.minecraft.init.Blocks;
@@ -15,7 +16,7 @@ public class Mushroom extends Species {
 	 */
 	public Mushroom(boolean redcap) {
 		this.redcap = redcap;
-		setRegistryName(new ResourceLocation(ModConstants.MODID, "mushroom" + (redcap ? "red" : "brn")));
+		setRegistryName(new ResourceLocation(Tags.MOD_ID, "mushroom" + (redcap ? "red" : "brn")));
 		setStandardSoils();
 		addGenFeature(new FeatureGenHugeMushroom(redcap ? Blocks.RED_MUSHROOM_BLOCK : Blocks.BROWN_MUSHROOM_BLOCK), IGenFeature.FULLGEN);
 	}

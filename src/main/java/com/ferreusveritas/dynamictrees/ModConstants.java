@@ -2,10 +2,6 @@ package com.ferreusveritas.dynamictrees;
 
 public class ModConstants {
 
-	public static final String MODID = "dynamictrees";
-	public static final String NAME = "Dynamic Trees";
-	public static final String VERSION = "1.12.2-9999.9999.9999z"; // Assigned from gradle during compile, do not change!
-
 	public static final String OPTAFTER = "after:";
 	public static final String OPTBEFORE = "before:";
 	public static final String REQAFTER = "required-after:";
@@ -18,7 +14,7 @@ public class ModConstants {
 	public static final String SERENESEASONS = "sereneseasons";
 
 	//Other mods can use this string to depend on the latest version of Dynamic Trees
-	public static final String DYNAMICTREES_LATEST = MODID + AT + VERSION + ORGREATER;
+	public static final String DYNAMICTREES_LATEST = Tags.MOD_ID + AT + Tags.VERSION + ORGREATER;
 
 	//Other Add-on Mods
 	public static final String DYNAMICTREESBOP = "dynamictreesbop";

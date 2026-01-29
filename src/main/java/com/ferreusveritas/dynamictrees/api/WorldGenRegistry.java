@@ -2,6 +2,7 @@ package com.ferreusveritas.dynamictrees.api;
 
 import com.ferreusveritas.dynamictrees.ModConfigs;
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.api.events.PopulateDataBaseEvent;
 import com.ferreusveritas.dynamictrees.api.worldgen.IBiomeDataBasePopulator;
 import com.ferreusveritas.dynamictrees.util.JsonHelper;
@@ -29,7 +30,7 @@ public class WorldGenRegistry {
 	//////////////////////////////
 
 	private static final String RESOURCEPATH = "worldgen/default.json";
-	private static final String CONFIGPATH = "/" + ModConstants.MODID;
+	private static final String CONFIGPATH = "/" + Tags.MOD_ID;
 	private static final String WORLDGENCONFIGPATH = CONFIGPATH + "/worldgen.json";
 	private static final String DIMGENCONFIGPATH = CONFIGPATH + "/dimensions.json";
 
@@ -46,7 +47,7 @@ public class WorldGenRegistry {
 		BiomeDataBasePopulatorRegistryEvent event = new BiomeDataBasePopulatorRegistryEvent();
 
 		//This registers the main populator
-		event.register(new BiomeDataBasePopulatorJson(new ResourceLocation(ModConstants.MODID, RESOURCEPATH)));
+		event.register(new BiomeDataBasePopulatorJson(new ResourceLocation(Tags.MOD_ID, RESOURCEPATH)));
 
 		//This loads populators from add-ons
 		MinecraftForge.EVENT_BUS.post(event);

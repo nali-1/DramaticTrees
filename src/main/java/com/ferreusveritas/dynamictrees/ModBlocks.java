@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-@Mod.EventBusSubscriber(modid = ModConstants.MODID)
+@Mod.EventBusSubscriber(modid = Tags.MOD_ID)
 public class ModBlocks {
 
 	public static BlockRooty blockRootyDirt;
@@ -63,7 +63,7 @@ public class ModBlocks {
 	}
 
 	public static void setupLeavesProperties() {
-		leaves = LeavesPaging.build(new ResourceLocation(ModConstants.MODID, "leaves/common.json"));
+		leaves = LeavesPaging.build(new ResourceLocation(Tags.MOD_ID, "leaves/common.json"));
 		leaves.put("cactus", new LeavesProperties(null, ItemStack.EMPTY, TreeRegistry.findCellKit("bare")));//Explicitly unbuilt since there's no leaves
 	}
 
@@ -74,7 +74,7 @@ public class ModBlocks {
 		ArrayList<Block> treeBlocks = new ArrayList<Block>();
 		ModTrees.baseFamilies.forEach(tree -> tree.getRegisterableBlocks(treeBlocks));
 		ModTrees.dynamicCactus.getRegisterableBlocks(treeBlocks);
-		treeBlocks.addAll(LeavesPaging.getLeavesMapForModId(ModConstants.MODID).values());
+		treeBlocks.addAll(LeavesPaging.getLeavesMapForModId(Tags.MOD_ID).values());
 
 		registry.registerAll(
 			blockRootyDirt,

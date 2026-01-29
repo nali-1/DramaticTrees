@@ -2,6 +2,7 @@ package com.ferreusveritas.dynamictrees.trees;
 
 import com.ferreusveritas.dynamictrees.ModBlocks;
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.api.TreeHelper;
 import com.ferreusveritas.dynamictrees.api.network.MapSignal;
 import com.ferreusveritas.dynamictrees.api.treedata.ILeavesProperties;
@@ -46,7 +47,7 @@ public class TreeCactus extends TreeFamily {
 
 			this.setSoilLongevity(1);
 
-			addDropCreator(new DropCreator(new ResourceLocation(ModConstants.MODID, "cactusseeds")) {
+			addDropCreator(new DropCreator(new ResourceLocation(Tags.MOD_ID, "cactusseeds")) {
 				@Override
 				public List<ItemStack> getLogsDrop(World world, Species species, BlockPos breakPos, Random random, List<ItemStack> dropList, float volume) {
 					int numLogs = (int) (volume / 2);
@@ -154,7 +155,7 @@ public class TreeCactus extends TreeFamily {
 	}
 
 	public TreeCactus() {
-		super(new ResourceLocation(ModConstants.MODID, "cactus"));
+		super(new ResourceLocation(Tags.MOD_ID, "cactus"));
 
 		setPrimitiveLog(Blocks.CACTUS.getDefaultState(), new ItemStack(Blocks.CACTUS));
 		setStick(ItemStack.EMPTY);

@@ -2,6 +2,7 @@ package com.ferreusveritas.dynamictrees.models.bakedmodels;
 
 import com.ferreusveritas.dynamictrees.ModBlocks;
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.blocks.BlockDynamicSapling;
 import com.ferreusveritas.dynamictrees.blocks.SpeciesProperty;
 import com.ferreusveritas.dynamictrees.trees.Species;
@@ -45,7 +46,7 @@ public class BakedModelSapling implements IBakedModel {
 	public BakedModelSapling(IModelState state, VertexFormat format, Function<ResourceLocation, TextureAtlasSprite> bakedTextureGetter) {
 
 		try {
-			IModel model = ModelLoaderRegistry.getModel(new ResourceLocation(ModConstants.MODID, "block/saplings/error"));
+			IModel model = ModelLoaderRegistry.getModel(new ResourceLocation(Tags.MOD_ID, "block/saplings/error"));
 			if (model != null) {
 				errorSaplingModel = model.bake(state, format, bakedTextureGetter);
 			}

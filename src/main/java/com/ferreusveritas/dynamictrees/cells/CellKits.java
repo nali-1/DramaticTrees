@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.cells;
 
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.api.TreeRegistry;
 import com.ferreusveritas.dynamictrees.api.cells.CellNull;
 import com.ferreusveritas.dynamictrees.api.cells.ICell;
@@ -51,12 +52,12 @@ public class CellKits {
 	}
 
 	public CellKits() {
-		TreeRegistry.registerCellKit(new ResourceLocation(ModConstants.MODID, "deciduous"), deciduous);
-		TreeRegistry.registerCellKit(new ResourceLocation(ModConstants.MODID, "conifer"), conifer);
-		TreeRegistry.registerCellKit(new ResourceLocation(ModConstants.MODID, "acacia"), acacia);
-		TreeRegistry.registerCellKit(new ResourceLocation(ModConstants.MODID, "darkoak"), darkoak);
-		TreeRegistry.registerCellKit(new ResourceLocation(ModConstants.MODID, "bare"), bare);
-		TreeRegistry.registerCellKit(new ResourceLocation(ModConstants.MODID, "palm"), palm);
+		TreeRegistry.registerCellKit(new ResourceLocation(Tags.MOD_ID, "deciduous"), deciduous);
+		TreeRegistry.registerCellKit(new ResourceLocation(Tags.MOD_ID, "conifer"), conifer);
+		TreeRegistry.registerCellKit(new ResourceLocation(Tags.MOD_ID, "acacia"), acacia);
+		TreeRegistry.registerCellKit(new ResourceLocation(Tags.MOD_ID, "darkoak"), darkoak);
+		TreeRegistry.registerCellKit(new ResourceLocation(Tags.MOD_ID, "bare"), bare);
+		TreeRegistry.registerCellKit(new ResourceLocation(Tags.MOD_ID, "palm"), palm);
 	}
 
 	private final ICellKit deciduous = new ICellKit() {

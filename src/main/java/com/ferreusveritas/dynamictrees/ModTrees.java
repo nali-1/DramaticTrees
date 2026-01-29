@@ -18,7 +18,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import java.util.ArrayList;
 import java.util.Collections;
 
-@Mod.EventBusSubscriber(modid = ModConstants.MODID)
+@Mod.EventBusSubscriber(modid = Tags.MOD_ID)
 public class ModTrees {
 
 	public static final String NULL = "null";
@@ -40,7 +40,7 @@ public class ModTrees {
 	 * on the Dynamic Sapling
 	 */
 	public static void preInit() {
-		Species.REGISTRY.register(Species.NULLSPECIES.setRegistryName(new ResourceLocation(ModConstants.MODID, "null")));
+		Species.REGISTRY.register(Species.NULLSPECIES.setRegistryName(new ResourceLocation(Tags.MOD_ID, "null")));
 		Collections.addAll(baseFamilies, new TreeOak(), new TreeSpruce(), new TreeBirch(), new TreeJungle(), new TreeAcacia(), new TreeDarkOak());
 		baseFamilies.forEach(tree -> tree.registerSpecies(Species.REGISTRY));
 		dynamicCactus = new TreeCactus();

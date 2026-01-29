@@ -2,6 +2,7 @@ package com.ferreusveritas.dynamictrees.systems.dropcreators;
 
 import com.ferreusveritas.dynamictrees.ModConfigs;
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.api.treedata.IDropCreator;
 import com.ferreusveritas.dynamictrees.event.SeedVoluntaryDropEvent;
 import com.ferreusveritas.dynamictrees.trees.Species;
@@ -44,7 +45,7 @@ public class DropCreatorSeed implements IDropCreator {
 
 	@Override
 	public ResourceLocation getName() {
-		return new ResourceLocation(ModConstants.MODID, "seed");
+		return new ResourceLocation(Tags.MOD_ID, "seed");
 	}
 
 	@Override

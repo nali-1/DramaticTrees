@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.trees;
 
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.api.TreeHelper;
 import com.ferreusveritas.dynamictrees.items.Seed;
 import net.minecraft.block.BlockOldLeaf;
@@ -65,7 +66,7 @@ public class TreeBirch extends TreeFamilyVanilla {
 	public class SpeciesTallBirch extends SpeciesBirch {
 
 		public SpeciesTallBirch(TreeFamily treeFamily) {
-			super(new ResourceLocation(ModConstants.MODID, "tallbirch"), treeFamily);
+			super(new ResourceLocation(Tags.MOD_ID, "tallbirch"), treeFamily);
 
 			this.setBasicGrowingParameters(0.08F, 24.0F, 7, 7, 1.3F);
 			this.setSoilLongevity(12);

@@ -3,6 +3,7 @@ package com.ferreusveritas.dynamictrees.trees;
 import com.ferreusveritas.dynamictrees.ModBlocks;
 import com.ferreusveritas.dynamictrees.ModConfigs;
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.api.*;
 import com.ferreusveritas.dynamictrees.api.network.INodeInspector;
 import com.ferreusveritas.dynamictrees.api.network.MapSignal;
@@ -154,8 +155,8 @@ public class Species extends net.minecraftforge.registries.IForgeRegistryEntry.I
 
 	public static void newRegistry(RegistryEvent.NewRegistry event) {
 		REGISTRY = new RegistryBuilder<Species>()
-			.setName(new ResourceLocation(ModConstants.MODID, "species"))
-			.setDefaultKey(new ResourceLocation(ModConstants.MODID, "null"))
+			.setName(new ResourceLocation(Tags.MOD_ID, "species"))
+			.setDefaultKey(new ResourceLocation(Tags.MOD_ID, "null"))
 			.disableSaving()
 			.setType(Species.class)
 			.setIDRange(0, Integer.MAX_VALUE - 1)

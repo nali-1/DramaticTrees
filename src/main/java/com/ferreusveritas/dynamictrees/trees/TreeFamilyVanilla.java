@@ -2,6 +2,7 @@ package com.ferreusveritas.dynamictrees.trees;
 
 import com.ferreusveritas.dynamictrees.ModBlocks;
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.api.treedata.ILeavesProperties;
 import net.minecraft.block.BlockNewLog;
 import net.minecraft.block.BlockOldLog;
@@ -19,7 +20,7 @@ public class TreeFamilyVanilla extends TreeFamily {
 	public final BlockPlanks.EnumType woodType;
 
 	public TreeFamilyVanilla(BlockPlanks.EnumType wood) {
-		super(new ResourceLocation(ModConstants.MODID, wood.getName().replace("_", "")));
+		super(new ResourceLocation(Tags.MOD_ID, wood.getName().replace("_", "")));
 
 		woodType = wood;
 		getCommonLeaves().setTree(this);

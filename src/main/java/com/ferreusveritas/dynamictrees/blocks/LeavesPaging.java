@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.blocks;
 
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.api.treedata.ILeavesProperties;
 import com.ferreusveritas.dynamictrees.util.JsonHelper;
 import com.google.gson.JsonElement;
@@ -41,7 +42,7 @@ public class LeavesPaging {
 	private static String autoModId(@Nullable String modid) {
 		if (modid == null || "".equals(modid)) {
 			ModContainer mc = Loader.instance().activeModContainer();
-			modid = mc == null ? ModConstants.MODID : mc.getModId();
+			modid = mc == null ? Tags.MOD_ID : mc.getModId();
 		}
 		return modid;
 	}
@@ -160,7 +161,7 @@ public class LeavesPaging {
 			return build(element.getAsJsonObject());
 		}
 
-		Logger.getLogger(ModConstants.MODID).log(Level.SEVERE, "Error building leaves paging for mod: " + modid + " at " + jsonLocation);
+		Logger.getLogger(Tags.MOD_ID).log(Level.SEVERE, "Error building leaves paging for mod: " + modid + " at " + jsonLocation);
 
 		return null;
 	}

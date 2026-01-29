@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.systems.dropcreators;
 
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.api.treedata.IDropCreator;
 import com.ferreusveritas.dynamictrees.api.treedata.IDropCreatorStorage;
 import com.ferreusveritas.dynamictrees.trees.Species;
@@ -23,7 +24,7 @@ public class DropCreatorStorage implements IDropCreatorStorage {
 
 	@Override
 	public ResourceLocation getName() {
-		return new ResourceLocation(ModConstants.MODID, "storage");
+		return new ResourceLocation(Tags.MOD_ID, "storage");
 	}
 
 	@Override

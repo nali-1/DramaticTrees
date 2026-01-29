@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.worldgen;
 
 import com.ferreusveritas.dynamictrees.ModConstants;
+import com.ferreusveritas.dynamictrees.Tags;
 import com.ferreusveritas.dynamictrees.trees.Species;
 import net.minecraft.util.math.MathHelper;
 
@@ -36,7 +37,7 @@ public class JoCodeStore {
 
 	public void addCodesFromFile(Species species, String filename) {
 		try {
-			Logger.getLogger(ModConstants.MODID).log(Level.CONFIG, "Loading Tree Codes for species \"" + species + "\" from file: " + filename);
+			Logger.getLogger(Tags.MOD_ID).log(Level.CONFIG, "Loading Tree Codes for species \"" + species + "\" from file: " + filename);
 			InputStream stream = getClass().getClassLoader().getResourceAsStream(filename);
 			if (stream != null) {
 				InputStreamReader streamReader = new InputStreamReader(stream, StandardCharsets.UTF_8);
@@ -52,7 +53,7 @@ public class JoCodeStore {
 				throw (new FileNotFoundException(filename));
 			}
 		} catch (FileNotFoundException e) {
-			Logger.getLogger(ModConstants.MODID).log(Level.WARNING, "No JoCode file found for species \"" + species + "\" at location: " + filename);
+			Logger.getLogger(Tags.MOD_ID).log(Level.WARNING, "No JoCode file found for species \"" + species + "\" at location: " + filename);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
