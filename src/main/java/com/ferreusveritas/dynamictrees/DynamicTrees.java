@@ -14,8 +14,8 @@ import org.apache.logging.log4j.Logger;
  * 2016-2018 Ferreusveritas
  */
 @Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION, dependencies = ModConstants.DEPENDENCIES, updateJSON = ModConstants.UPDATE_CHECKER)
-public class DynamicTrees {
-
+public class DynamicTrees
+{
 	@Mod.Instance(Tags.MOD_ID)
 	public static DynamicTrees instance;
 
@@ -52,5 +52,4 @@ public class DynamicTrees {
 	public static void serverStopped(FMLServerStoppedEvent event) {
 		WorldGeneratorTrees.clearFlatWorldCache();
 	}
-
 }

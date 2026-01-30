@@ -148,6 +148,11 @@ dependencies {
     compileOnly("curse.maven:serene-seasons-291874:2799213")
     compileOnly("curse.maven:aquaacrobatics-321792:4391401")
     runtimeOnly("curse.maven:patchouli-306770:3162874")
+
+    implementation("curse.maven:natura-legacy-1116420:6982881")
+
+    implementation files("lib/HeatAndClimateLib_1.12.2-3.9.3.jar")
+    implementation files("lib/HeatAndClimateMod_1.12.2-3.9.11.jar")
 }
 
 apply from: 'gradle/scripts/dependencies.gradle'
