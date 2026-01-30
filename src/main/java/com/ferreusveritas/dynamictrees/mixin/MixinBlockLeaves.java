@@ -1,5 +1,7 @@
 package com.ferreusveritas.dynamictrees.mixin;
 
+import com.ferreusveritas.dynamictrees.DynamicTrees;
+import defeatedcrow.hac.core.base.ClimateCropBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
@@ -37,6 +39,7 @@ public abstract class MixinBlockLeaves extends Block
 	@Override
 	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
 	{
-		return !(blockAccess.getBlockState(pos.offset(side)).getBlock() instanceof MixinBlockLeaves) && super.shouldSideBeRendered(blockState, blockAccess, pos, side);
+		Block Vblock = blockAccess.getBlockState(pos.offset(side)).getBlock();
+		return !(Vblock instanceof BlockLeaves || (DynamicTrees.bLOAD_HAC && Vblock instanceof ClimateCropBase)) && super.shouldSideBeRendered(blockState, blockAccess, pos, side);
 	}
 }

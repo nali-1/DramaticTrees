@@ -14,9 +14,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(ClimateCropBase.class)
-public abstract class MixinLeavesCropBlockDC extends BlockDC
+public abstract class MixinClimateCropBase extends BlockDC
 {
-	public MixinLeavesCropBlockDC(Material m, String s)
+	public MixinClimateCropBase(Material m, String s)
 	{
 		super(m, s);
 	}
@@ -26,6 +26,6 @@ public abstract class MixinLeavesCropBlockDC extends BlockDC
 	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
 	{
 		Block Vblock = blockAccess.getBlockState(pos.offset(side)).getBlock();
-		return !(Vblock instanceof BlockLeaves || Vblock instanceof MixinLeavesCropBlockDC) && super.shouldSideBeRendered(blockState, blockAccess, pos, side);
+		return !(Vblock instanceof BlockLeaves || Vblock instanceof ClimateCropBase) && super.shouldSideBeRendered(blockState, blockAccess, pos, side);
 	}
 }

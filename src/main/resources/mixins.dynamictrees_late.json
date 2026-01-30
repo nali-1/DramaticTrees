@@ -7,7 +7,7 @@
 	"compatibilityLevel": "JAVA_8",
 	"mixins": [
 		"natura.MixinBlockEnumBerryBush",
-		"hac.MixinLeavesCropBlockDC",
+		"hac.MixinClimateCropBase",
 		"hac.MixinBlockLeavesLemon",
 		"hac.MixinBlockLeavesWalnut",
 		"hac.MixinBlockLeavesOlive",

@@ -1,7 +1,6 @@
 package com.ferreusveritas.dynamictrees.mixin.hac;
 
 import defeatedcrow.hac.core.base.ClimateCropBase;
-import defeatedcrow.hac.food.block.crop.BlockLeavesLemon;
 import defeatedcrow.hac.food.block.crop.BlockLeavesMorus;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
