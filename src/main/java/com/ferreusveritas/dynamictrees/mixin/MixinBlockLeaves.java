@@ -1,7 +1,6 @@
 package com.ferreusveritas.dynamictrees.mixin;
 
-import com.ferreusveritas.dynamictrees.DynamicTrees;
-import defeatedcrow.hac.core.base.ClimateCropBase;
+import com.ferreusveritas.dynamictrees.Cull;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
@@ -10,9 +9,13 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BlockLeaves.class)
 public abstract class MixinBlockLeaves extends Block
@@ -20,6 +23,13 @@ public abstract class MixinBlockLeaves extends Block
 	public MixinBlockLeaves(Material materialIn)
 	{
 		super(materialIn);
+	}
+
+	@Inject(method = "<init>", at = @At("TAIL"))
+	public void Mset(CallbackInfo ci)
+	{
+		if (FMLLaunchHandler.side().isClient())
+			Cull.vCULL.add(this);
 	}
 
 	@Override
@@ -39,7 +49,6 @@ public abstract class MixinBlockLeaves extends Block
 	@Override
 	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
 	{
-		Block Vblock = blockAccess.getBlockState(pos.offset(side)).getBlock();
-		return !(Vblock instanceof BlockLeaves || (DynamicTrees.bLOAD_HAC && Vblock instanceof ClimateCropBase)) && super.shouldSideBeRendered(blockState, blockAccess, pos, side);
+		return Cull.mCULL(blockAccess, pos, side) && super.shouldSideBeRendered(blockState, blockAccess, pos, side);
 	}
 }
