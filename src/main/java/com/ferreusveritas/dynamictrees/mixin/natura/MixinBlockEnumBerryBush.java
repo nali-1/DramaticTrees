@@ -1,6 +1,7 @@
 package com.ferreusveritas.dynamictrees.mixin.natura;
 
 import com.ferreusveritas.dynamictrees.Cull;
+import com.ferreusveritas.dynamictrees.ICullBush;
 import com.progwml6.natura.common.block.BlockEnumBerryBush;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
@@ -10,27 +11,16 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
-import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BlockEnumBerryBush.class)
-public abstract class MixinBlockEnumBerryBush extends Block
+public abstract class MixinBlockEnumBerryBush extends Block implements ICullBush
 {
 	public MixinBlockEnumBerryBush(Material blockMaterialIn, MapColor blockMapColorIn)
 	{
 		super(blockMaterialIn, blockMapColorIn);
-	}
-
-	@Inject(method = "<init>", at = @At("TAIL"))
-	public void Mset(CallbackInfo ci)
-	{
-		if (FMLLaunchHandler.side().isClient())
-			Cull.vCULL_BUSH.add(this);
 	}
 
 	@Override
