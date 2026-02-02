@@ -12,7 +12,9 @@
 		"hac.MixinBlockLeavesWalnut",
 		"hac.MixinBlockLeavesOlive",
 		"hac.MixinBlockLeavesMorus",
-		"hac.MixinBlockLeavesDates"
+		"hac.MixinBlockLeavesDates",
+		"cuisine.MixinBlockModLeaves",
+		"cuisine.MixinBlockShearedLeaves"
 	],
 	"server": [],
 	"client": [
